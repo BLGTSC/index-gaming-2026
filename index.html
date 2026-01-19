@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>CSX16 - Comunitate Gaming Romania | Servere & Forum CS 1.6</title>
+    <meta name="title" content="CSX16 - Comunitate Gaming Romania | Servere & Forum CS 1.6">
+    <meta name="description" content="CSX16.RO - Cea mai tare comunitate de Counter-Strike 1.6 din Romania. Acceseaza forumul pentru discutii, cereri admin, unban si vezi lista de servere CS 1.6 populate." />
+    <meta name="keywords" content="cs 1.6, counter-strike 1.6, forum cs 1.6, servere cs 1.6, comunitate gaming romania, csx16, cerere admin, unban, discutii cs, panel cs 1.6, servere populate, download cs" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#00f3ff" />
+    <meta name="author" content="CSX16 Network" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://csx16.ro/" />
+    <meta property="og:title" content="CSX16 - Comunitate Gaming Romania" />
+    <meta property="og:description" content="Alatura-te comunitatii CSX16! Forum activ, servere CS 1.6 fara lag si staff matur. Gaming la superlativ in Romania." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://csx16.ro/" />
+    <meta property="twitter:title" content="CSX16 - Comunitate Gaming Romania" />
+    <meta property="twitter:description" content="Servere CS 1.6 Top Quality, Forum Activ, Panel. Hai in comunitatea CSX16!" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Rajdhani', 'sans-serif'],
+              display: ['Orbitron', 'sans-serif'],
+              mono: ['"Share Tech Mono"', 'monospace'],
+            },
+            colors: {
+              brand: {
+                dark: '#050505',
+                card: '#0a0a0f',
+                accent: '#00f3ff',
+                danger: '#ff2a2a',
+                secondary: '#1a1a2e',
+                text: '#e2e2e2'
+              }
+            },
+            backgroundImage: {
+              'cyber-grid': "linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px)",
+              'vignette': "radial-gradient(circle, transparent 50%, #050505 100%)"
+            },
+            animation: {
+              'spin-slow': 'spin 10s linear infinite',
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glitch': 'glitch 1s linear infinite',
+            },
+            keyframes: {
+              glitch: {
+                '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+                '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+                '62%': { transform: 'translate(0,0) skew(5deg)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #e2e2e2;
+        overflow-x: hidden;
+      }
+      
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050505; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1a1a2e; 
+        border: 1px solid #00f3ff;
+      }
+
+      /* Scanline Overlay */
+      .scanlines {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255,255,255,0),
+          rgba(255,255,255,0) 50%,
+          rgba(0,0,0,0.2) 50%,
+          rgba(0,0,0,0.2)
+        );
+        background-size: 100% 4px;
+        z-index: 9999;
+        pointer-events: none;
+        opacity: 0.15;
+      }
+
+      /* Angled Corners Utility */
+      .clip-corner {
+        clip-path: polygon(
+          10px 0, 100% 0, 
+          100% calc(100% - 10px), calc(100% - 10px) 100%, 
+          0 100%, 0 10px
+        );
+      }
+      
+      .clip-corner-large {
+        clip-path: polygon(
+          20px 0, 100% 0, 
+          100% calc(100% - 20px), calc(100% - 20px) 100%, 
+          0 100%, 0 20px
+        );
+      }
+
+      /* Glitch Effect Classes */
+      .glitch-text {
+        position: relative;
+      }
+      .glitch-text::before,
+      .glitch-text::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .glitch-text::before {
+        left: 2px;
+        text-shadow: -1px 0 #ff2a2a;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim-1 5s infinite linear alternate-reverse;
+      }
+      .glitch-text::after {
+        left: -2px;
+        text-shadow: -1px 0 #00f3ff;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim-2 5s infinite linear alternate-reverse;
+      }
+
+      @keyframes glitch-anim-1 {
+        0% { clip: rect(30px, 9999px, 10px, 0); }
+        5% { clip: rect(70px, 9999px, 90px, 0); }
+        10% { clip: rect(10px, 9999px, 80px, 0); }
+        100% { clip: rect(0, 0, 0, 0); }
+      }
+      @keyframes glitch-anim-2 {
+        0% { clip: rect(10px, 9999px, 50px, 0); }
+        5% { clip: rect(80px, 9999px, 20px, 0); }
+        10% { clip: rect(30px, 9999px, 10px, 0); }
+        100% { clip: rect(0, 0, 0, 0); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <div class="scanlines"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
